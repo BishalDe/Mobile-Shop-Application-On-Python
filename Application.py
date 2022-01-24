@@ -10,6 +10,7 @@ from tqdm import tqdm
 from colorama.ansi import Fore
 from datetime import date,datetime
 from tabulate import tabulate
+import pwinput
 window_size='mode 190,30'
 os.system(window_size)
 
@@ -185,7 +186,7 @@ def f():
             print('                   <--- Got Into New User Menu --->')
             print()
             username=input("                    Enter Your Username     -> ")
-            password=input("                    Enter Your Password -> ")
+            password=pwinput.pwinput(prompt='                    Enter Your Password -> : ', mask='X')
             login(username,password)
 
 def login(username,password):
